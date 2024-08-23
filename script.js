@@ -18,4 +18,13 @@ function createSquare(number) {
   return "Done!";
 }
 
+container.addEventListener("mouseover", function (event) {
+    if (event.target.matches(".square")) {
+      //   console.log(typeof(event.target.style.opacity))
+      event.target.style.backgroundColor = "white";
+      event.target.style.borderColor = "white";
+    }
+  });
+
+
 createSquare(64);
