@@ -69,7 +69,7 @@ label {
   flex: 1 1 auto;
   box-sizing: border-box;
   background-color: rgba(0, 0, 0, 0);
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.1s ease-in-out;
 }
 
 .colorMode,

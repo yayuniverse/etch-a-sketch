@@ -6,7 +6,7 @@ const form = document.querySelector("form");
 const toggleColorMode = document.querySelector("#toggleColorMode");
 const toggleShadeMode = document.querySelector("#toggleShadeMode");
 
-createSquare(64);
+createSquare(48);
 
 function removeAllChildren(parent) {
   while (parent.firstChild) {
@@ -39,6 +39,14 @@ function randomColor() {
   );
 }
 
+function updateToggleStates(changedToggle) {
+  if (changedToggle === "colorMode" && toggleShadeMode.checked) {
+    toggleShadeMode.checked = false;
+  } else if (changedToggle === "shadeMode" && toggleColorMode.checked) {
+    toggleColorMode.checked = false;
+  }
+}
+
 container.addEventListener("mouseover", function (event) {
   if (event.target.matches(".square")) {
     if (toggleShadeMode.checked) {
@@ -64,4 +72,12 @@ button.addEventListener("click", () => {
 form.addEventListener("submit", function (event) {
   event.preventDefault(); // Prevent the form from actually submitting
   createSquare(input.value);
+});
+
+toggleShadeMode.addEventListener("change", function () {
+  updateToggleStates("shadeMode");
+});
+
+toggleColorMode.addEventListener("change", function () {
+  updateToggleStates("colorMode");
 });
