@@ -8,6 +8,7 @@ html {
 *:before,
 *:after {
   box-sizing: inherit;
+  font-family: Arial, sans-serif;
 }
 
 body {
@@ -16,17 +17,47 @@ body {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
+  gap: 24px;
   justify-content: center;
   align-items: center;
+  background-color: #111;
+  color: #aaa;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#number {
+  background-color: #444;
+  border: 1.5px solid #666;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: inherit;
+}
+
+button {
   background-color: #222;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  color: inherit;
+}
+
+label {
+  text-align: center;
 }
 
 .container,
 .square {
-  border: 1px solid #888;
+  border: 1px solid #222;
 }
 
 .container {
+  border-radius: 2px;
   width: 640px;
   height: 640px;
   display: flex;
@@ -38,5 +69,16 @@ body {
   flex: 1 1 auto;
   box-sizing: border-box;
   background-color: black;
-  /* opacity: 0%; */
+}
+
+.colorMode,
+.shadeMode {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.controls {
+  display: flex;
+  gap: 16px;
 }

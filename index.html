@@ -1,13 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sketch</title>
+    <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
-</head>
-<body>
+  </head>
+  <body>
+    <form>
+      <label for="number">
+        Grid Size <br />
+        (e.g. 64 for a 64 x 64 grid)
+      </label>
+      <input
+        type="number"
+        id="number"
+        min="8"
+        max="100"
+        required
+        onchange="this.value = Math.min(Math.max(this.value, 8), 100)"
+      />
+      <button type="button">Create</button>
+    </form>
     <div class="container"></div>
-</body>
+    
+    <span class="controls">
+      <span class="colorMode">
+        <input type="checkbox" id="toggleColorMode" name="colorMode" />
+        <label for="toggleColorMode">Toggle Color Mode</label>
+      </span>
+
+      <span class="shadeMode">
+        <input type="checkbox" id="toggleShadeMode" name="shadeMode" />
+        <label for="toggleShadeMode">Toggle Shade Mode</label>
+      </span>
+    </span>
+  </body>
 </html>
